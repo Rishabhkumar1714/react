@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+//import Users from './User';
+// import User2 from './User2';
 
 function App() {
+  const[status,setStatus]=React.useState(true)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        status? <h1>Hello World</h1>:null
+      }
+
+      <button onClick={()=>setStatus(false)}>Hide</button>
+      <button onClick={()=>setStatus(true)}>Show</button>
+      <button onClick={()=>setStatus(!status)}>Toggle</button>
+
+     
+      {/* <Users /> */}
+      {/* <User2 /> */}
+      {/* <button>Click me</button> */}
+     
     </div>
   );
 }
